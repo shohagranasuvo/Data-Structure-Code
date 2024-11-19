@@ -70,7 +70,7 @@ int main()
 
     cout<<"\n";
 
-    if(count!=1)
+    if(count<=1)
     {
 
         cout <<"Array already unique!"<<endl;

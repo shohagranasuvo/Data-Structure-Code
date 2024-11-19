@@ -6,15 +6,12 @@ class Node
     public: 
     int data ;
     Node* next ;
-
+   
+   
     Node ()
-
     {
-
         this ->data ;
         this-> next=NULL;
-
-
     }
 
     Node (int data)

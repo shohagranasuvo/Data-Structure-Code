@@ -73,7 +73,7 @@ int main()
 
     // for(int e : vec)
 
-    // {
+    // {2
 
     //     cout<<e<<" ";
     // }
