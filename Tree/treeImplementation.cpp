@@ -114,6 +114,8 @@ void treeTravel(node* root)
 void InOrder(node* root) //LNR
 { 
 
+    
+
     if(root==NULL)
     {
         return ;
@@ -168,25 +170,44 @@ void PostOrder(node* root) //LRN
 void IntretionInorder(node* root)
 {
 
+    if (root == NULL) return;
+
+
     stack<node*> st ;
 
-    st.push(root);
+    
+    node* curr = root;
+    st.push(curr);
 
-    while(!st.empty())
+    while(!st.empty()||curr!=NULL)
     {
-
-        if(st.top()->left)
-        {
-            st.push(st.top()->left);
-        }
-       node * temp = st.top();
+        
        
+        while(curr!=NULL  )
+        {
+          
+            st.push(curr);
+            curr=curr->left ;
+        }
+        
 
+      
+        
+        curr=st.top();
+      
+       cout<<curr->data<<" ";
 
+        st.pop();
 
+        
 
+    
 
-
+      
+        
+        curr=curr->right;
+       
+       
 
 
     }
@@ -215,6 +236,10 @@ int main()
     PreOrder(root);
     cout<<"Post order traversal :  ";
     PostOrder(root);
+
+     cout<<"In  order traversal by itretion :  ";
+     IntretionInorder(root);
+
 
     // 1 y 3 y 7 n n y 11 n n y 5 y 17 n n n 
 
