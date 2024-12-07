@@ -15,7 +15,7 @@ void printvec(const vector<int> &vec)
 
 void insertionSort( vector<int>& vec)
 {
-    int comparison= 0 ,swap = 0 ;
+    int comparison= 0 ,shift = 0 ;
 
     for(int  i = 1 ;i<vec.size();i++)
     {
@@ -25,20 +25,23 @@ void insertionSort( vector<int>& vec)
 
         while ( j>= 0  && vec[j]> key  )
         {  
-             cout<<"Comparison : "<<++comparison<<endl;
-            cout<<"Swap number  = "<< ++swap<<endl ; 
+           ++comparison;
+          
             
-           // int temp = vec[j];
+           
             
             vec[j+1]=vec[j];
-           // vec[k]=temp;
+          
             j--;
+
+             ++shift ; 
            
 
         }
 
         vec[j+1]=key ;
-         printvec(vec);
+
+        
 
 
 
@@ -46,6 +49,11 @@ void insertionSort( vector<int>& vec)
 
 
     }
+
+     cout<<"Comparison : "<<comparison<<endl;
+     cout<<"shift number  = "<< shift<<endl ;
+
+      printvec(vec);
 
 
 

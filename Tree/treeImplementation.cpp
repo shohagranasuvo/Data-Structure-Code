@@ -220,6 +220,44 @@ void IntretionInorder(node* root)
 }
 
 
+ int minDepth(node *root) {
+        
+    if(root==NULL)
+    {
+        return 0;
+    }
+  
+    if (root->left == NULL && root->right==NULL)
+    {
+        return 1;
+    }
+      int left ,  right ;
+    
+    if(root->left!= NULL)
+    {
+        left = minDepth(root->left);
+        
+    }
+    else 
+    {
+        left =INT_MAX ;
+    }
+    
+    if(root->right!= NULL)
+    {
+        right = minDepth(root->right);
+        
+    }
+    else 
+    {
+        right =INT_MAX ;
+    }
+    
+    int ans = min(left ,right)+1;
+    return ans ;
+    }
+
+
 
 
 

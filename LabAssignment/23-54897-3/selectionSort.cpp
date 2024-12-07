@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void printvec(vector<int>vec)
+void printvec(const vector<int>&vec)
 {
 
     for(int ele : vec)
@@ -25,7 +25,7 @@ void selectionSort(vector<int> vec)
         int min =i;
         for(int j =i+1 ;j<vec.size();j++)
         {
-            cout<<"Comparison : "<<++comparison<<endl;
+           ++comparison;
 
             if(vec[j]<vec[min])
             {
@@ -37,15 +37,19 @@ void selectionSort(vector<int> vec)
         if(min!=i)
         {
 
-        cout<<"Swap :"<<++swap<<endl;
+        ++swap;
 
         int temp = vec[i];
 
         vec[i]=vec[min];
 
         vec[min]=temp;
-        printvec(vec);
+       
         }
+
+        
+
+
 
 
 
@@ -53,6 +57,10 @@ void selectionSort(vector<int> vec)
 
 
     }
+
+    cout<<"The sorted array is   : ";
+    printvec(vec);
+    cout<<"Total Number of comparison "<<comparison<<"\nTotal Number of swap "<<swap;
 
 
 }
@@ -66,13 +74,17 @@ int main()
 
     cout<<"Give me the number for Selection sort "<<endl;
     vector<int> vec ;
+
+   // vec ={50,60,44,222,15,24,63,57,59,88};
+
+
      for(int i = 0 ;i <x ;i++)
     {
 
-        int x;
+        int y;
 
-        cin>>x;
-        vec.push_back(x);
+        cin>>y;
+        vec.push_back(y);
 
 
     }

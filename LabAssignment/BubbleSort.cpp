@@ -16,36 +16,46 @@ void printvec(vector<int>vec)
 void BubbleSort (vector<int> vec)
 { int comparison = 0 ,swap =0 ;
 
+bool swapped;
+
     for(int i = 0 ; i <vec.size();i++){
+          swapped =false;
     for(int j = 0 ; j<vec.size()-i-1 ;j++)
     {
 
-        cout<<"Comparison number = "<<++comparison<<"   Between   "<<vec[j]<<"   and   "<<vec[j+1]<<"\n";
+        ++comparison;
+       
 
         if(vec[j]>vec[j+1])
         {
             int temp =vec[j];
             vec[j]= vec [j+1];
             vec[j+1]=temp;
-           cout<<"Swap number  = "<< ++swap<<endl ;
+           ++swap ;
+           swapped =true ;
 
-            printvec(vec);
+           
 
 
 
 
         }
-        else 
-        {
-            cout<<"And no swap "<<endl;
-        }
+       
         
 
 
 
 
 
-    }}
+    }
+    
+     if(!swapped)
+        {
+            break ;
+        }
+        }
+
+     printvec(vec);
 
     cout<<"Total comparison "<<comparison<<" and total swap = "<<swap ;
 
