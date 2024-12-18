@@ -97,7 +97,7 @@ struct Student
         if((st[i].Student_id)==item)
         {
 
-            cout<<"Found ;"
+            cout<<"Found ";
 
         }
 
