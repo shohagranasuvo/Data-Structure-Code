@@ -203,7 +203,8 @@ int main()
     insert(n);
     display();
     cout<<endl;
-while(1)
+    bool check = true ;
+while(check)
 {
 
     cout<<endl<<endl;
@@ -218,6 +219,7 @@ while(1)
     cout<<"8. Deleting any data"  <<endl;
     cout<<"9. max data"           <<endl;
     cout<<"10.min data"           <<endl;
+    cout<<"11.CLOSE"              <<endl;
 
     cout<<"enter your choice : "<<endl;
     cin>>ch;
@@ -323,6 +325,11 @@ case 10:
         minndata();
         cout << endl;
         break;
+    }
+
+    case 11:
+    {
+        check=false ;
     }
 
 
