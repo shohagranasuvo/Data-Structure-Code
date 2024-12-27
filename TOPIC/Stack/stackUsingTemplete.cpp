@@ -80,7 +80,7 @@ class Stack{
             cout<<arr[i]<<endl ;
         }
     }
- 
+  
 
     
 

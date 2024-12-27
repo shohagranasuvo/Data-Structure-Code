@@ -87,7 +87,7 @@ void checking (string expression )
 
 int main()
 {
-    string expression ="[{()}]{()}){{{}}}";
+    string expression ="[{()}]";
 
     checking(expression);
 
