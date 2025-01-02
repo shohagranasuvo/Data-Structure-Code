@@ -22,7 +22,7 @@ void enqueue (int data  )
     rear =(rear+1)% sizea ;
     arr[rear]=data ;
    }
-   else if ( (rear+1)%sizea) == front))
+   else if (( (rear+1)%sizea) == front)
    {
     cout<<"Full queue"<<endl;
 
