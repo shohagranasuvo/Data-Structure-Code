@@ -11,7 +11,7 @@ class Node
     Node ()
     {
         this ->data ;
-        this-> next=NULL;
+        this-> next=nullptr;
     }
 
     Node (int data)
@@ -19,7 +19,7 @@ class Node
     {
 
         this ->data =data;
-        this-> next=NULL;
+        this-> next=nullptr;
 
 
     }
@@ -28,10 +28,10 @@ class Node
 
         int value =this->data;
 
-        if(this->next != NULL)
+        if(this->next != nullptr)
         {
             delete next ;
-            this->next=NULL;
+            this->next=nullptr;
 
 
 
@@ -98,7 +98,7 @@ void insertAtposition(Node* &tail,Node* &head ,int position ,int da)
     temp -> next =tem;
     //add to last position
 
-    if(temp->next==NULL)
+    if(temp->next==nullptr)
     {
 
        inserAtTail(tail ,da);
@@ -120,7 +120,7 @@ void deleteNode(Node* &head  ,Node* &tail,int position )
         Node*temm=head;
 
         head =head->next ;
-        temm->next =NULL;
+        temm->next =nullptr;
 
         delete temm;
         return;
@@ -131,7 +131,7 @@ void deleteNode(Node* &head  ,Node* &tail,int position )
 
     }
 
-    while(count!=position-1)
+    while(count!=position)
     {
         teamp=(teamp->next);
 
@@ -153,7 +153,7 @@ void deleteNode(Node* &head  ,Node* &tail,int position )
     Node * tem =teamp->next;
 
     teamp->next =(teamp->next)->next ;
-    tem->next =NULL;
+    tem->next =nullptr;
 
     delete tem;
 
@@ -165,21 +165,58 @@ void deleteNode(Node* &head  ,Node* &tail,int position )
 
 
 
-void print(Node* &head)
+void print(Node* head)
 {
     Node* temp =head;
    
 
-    while(temp!=NULL)
+    while(temp!=nullptr)
     {
 
-        cout<<temp->data<<"    Address at "<<temp<<endl;
+        cout<<temp->data<<" " ;
 
         temp=temp->next;
 
     }
+    cout<<endl;
    
 }
+
+void search (int ele ,Node * head )
+
+{
+
+    if (head==nullptr)
+    {
+        cout<<"No element" <<endl; 
+        return ;
+
+    }
+    Node* temp =head ;
+
+    while( temp!= nullptr && !(temp->data ==ele)   )
+    {
+        temp=temp->next;
+    }
+
+    if(temp!= nullptr && (temp->data) ==ele)
+    {
+        cout<<ele <<" is found "<<endl;
+        //cout<<temp->data<<endl;
+    }
+    else if (temp ==nullptr)
+    {
+        cout<<ele <<" Not  found "<<endl ;
+    }
+
+
+}
+
+
+
+
+
+
 
 
 
@@ -187,16 +224,20 @@ int main()
 {
 
      Node* node1 = new Node(0);
-     Node* head =node1;
+
+    // cout<<node1 -> data <<endl;
+
+    // cout<<node1-> next<<endl;
+
+    Node* head =node1;
      Node*tail =node1;
 
-    insertAtHead(head ,9);
-    print(head);
+    // insertAtHead(head ,9);
 
     // insertAtHead(head ,10);
 
     // insertAtHead(head ,11);
-    // insertAtHead(head ,12);
+    //   insertAtHead(head ,12);
 
     inserAtTail(tail , 1);
     inserAtTail(tail , 2);
@@ -205,13 +246,19 @@ int main()
     inserAtTail(tail , 5);
     // insertAtposition(tail,head ,4,500 );
     // insertAtposition(tail,head ,1,1000 );
-     deleteNode(head ,tail,1);
+    //  deleteNode(head ,tail,1);
+
+    //  cout<<"This is head= "<<head<<endl;
+    //  cout<<"This is tail= "<<tail<<endl;
+    print (head);
      deleteNode(head ,tail,5);
+     search( 5,head );
+     print (head);
 
     
 
 
-     print(head  );
+     //print(head  );
 
 
     //   cout<<"This is head= "<<head<<endl;

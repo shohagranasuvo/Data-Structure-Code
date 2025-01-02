@@ -7,17 +7,7 @@ int top=-1;
 
 
 
-//struct stack {
 
-    
-//     int *s ;
-
-
-
-
-
-
-// };
 
 void push (int ele){
 
