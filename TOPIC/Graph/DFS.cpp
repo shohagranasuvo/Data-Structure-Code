@@ -60,13 +60,12 @@ int main() {
     vector<vector<int>> edge = {{1,2},{1,4}, {2,3} , {2,5} , {2,6},{5,7}, { 4,6}, { 6,7}, { 5,9},{9 ,8 } ,{6,9},{5,3}};
    vector<vector<int>> ans =  depthFirstSearch(9 ,12,edge ) ;
 
-   for(auto E : ans)
-   {
-    for ( auto f : ans)
-    {
-        cout<<f <<" " ;
+    for (const auto& component : ans) {
+        for (const auto& node : component) {
+            cout << node << " ";
+        }
+        cout << endl;
     }
-   }
 
 
 
