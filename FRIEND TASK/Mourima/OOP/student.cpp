@@ -24,7 +24,6 @@ class student{
     {
              this->cgpa= cgpa ;
 
-      
 
     }
     
@@ -47,7 +46,9 @@ class student{
     };
     void student :: display ()
     {
-        cout<<"Student ID :" <<id <<"\nCGPA : "<<cgpa<<endl;
+        cout<<"Student ID :" <<id<<" CGPA is "<<cgpa <<endl ;
+        
+         
     }
 
     bool student :: isvalidCgpa()
@@ -64,8 +65,17 @@ class student{
 
         }
     }
+    bool student :: scholarship()  
+     {
+        if(cgpa>=3.75 && cgpa<=4.00)
+       {
+        return true;
+       }else{
+        return false;
+       }
+        
 
-
+     }
 
 
 int main() {
@@ -91,23 +101,41 @@ int main() {
         s[i].setcgpa(y) ;
 
      }
+    int  count1= 0 ;
      for(int i = 0 ; i< 3 ;i++)
-     {
-        s[i].display();
-       bool checkcgpa =  s[i].isvalidCgpa();
-       while(checkcgpa !=true)
+     {  
+     while(s[i].isvalidCgpa() !=true)
        {
-        cout<<"Invalid CGPA .Give the cgpa again "<<endl ;
+        cout<<"Invalid CGPA for student number "<<i+1<<" .Give the cgpa again for student "<<i+1<<endl ;
         double x ;
         cin>>x ;
         s[i].setcgpa(x );
         
-          checkcgpa =  s[i].isvalidCgpa();
-
+ 
 
        }
+       cout<<"Student "<<i+1<<" details : " ;
+        s[i].display();
+        if(s[i].scholarship())
+        {
+            cout<<"Student "<< i+1<<" Will get scholarship "<<endl ;
+            count1++ ;
+        }
+        else
+        {
+             cout<<"Student "<< i+1<<" Will  not get scholarship "<<endl ;
+        }
+
+
+      
        
+
+       
+
      }
+     cout<<"Total number of student who got scholarship is = "<<count1<<endl;
+     
+      
 
 
     
