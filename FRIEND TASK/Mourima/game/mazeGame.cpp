@@ -28,14 +28,14 @@ int main() {
     }
    }
 
-   for(int i = 0 ; i < row ;i++)
-   {
-    for(int j=0 ; j<col; j++)
-    {
-        cout<<arr[i][j]<<" " ; 
-    }
-    cout<<endl;
-   }
+//    for(int i = 0 ; i < row ;i++)
+//    {
+//     for(int j=0 ; j<col; j++)
+//     {
+//         cout<<arr[i][j]<<" " ; 
+//     }
+//     cout<<endl;
+//    }
 
    
      int j =1 ;
@@ -70,7 +70,7 @@ int main() {
 
    }
 
-   cout<<"Here the path :" <<endl ;
+   cout<<"Here the path :" <<endl<<endl ;
 
    for(int i = 0 ; i < row ;i++)
    {
@@ -80,6 +80,7 @@ int main() {
     }
     cout<<endl;
    }
+   cout<<endl<<endl; 
 
 
    int s = 0 , h = 0 ;
@@ -101,7 +102,7 @@ int main() {
             continue;
 
         }
-        if(h+1 >col+1)
+        if(h+1 >=col)
         {
             cout<<"Out of bound "<<endl ;
             continue;
@@ -109,9 +110,77 @@ int main() {
         }
          arr[s][h]=1 ;
         arr[s][h+1]=3 ;
-        h+=1 ;
+        h+=1 ;}
 
-        for(int i = 0 ; i < row ;i++)
+        else if( c=='l')
+    {
+       
+        if(arr[s][h-1]==2 )
+        {
+            cout<<"Here Obstacle .try another way "<<endl ;
+            continue;
+
+        }
+        if(h-1<0)
+        {
+            cout<<"Out of bound "<<endl ;
+            continue;
+
+        }
+         arr[s][h]=1 ;
+        arr[s][h-1]=3 ;
+        h-=1 ;}
+
+        else if( c=='u')
+    {
+       
+        if(arr[s-1][h]==2 )
+        {
+            cout<<"Here Obstacle .try another way "<<endl ;
+            continue;
+
+        }
+         else if(s-1<0)
+        {
+            cout<<"Out of bound "<<endl ;
+            continue;
+
+        }
+         arr[s][h]=1 ;
+        arr[s-1][h]=3 ;
+        s-=1 ;}
+
+         else if( c=='d')
+    {
+       
+        if(arr[s+1][h]==2 )
+        {
+            cout<<"Here Obstacle .try another way "<<endl ;
+            continue;
+
+        }
+       else if(s+1<0)
+        {
+            cout<<"Out of bound "<<endl ;
+            continue;
+
+        }
+         arr[s][h]=1 ;
+        arr[s+1][h]=3 ;
+        s+=1 ;}
+
+
+
+
+
+
+
+
+
+
+
+
+   for(int i = 0 ; i < row ;i++)
    {
     for(int j=0 ; j<col; j++)
     {
@@ -119,23 +188,15 @@ int main() {
     }
     cout<<endl;
    }
-
-   
-
-
-
-
-    }
-    
-
-
-
+   cout<<endl<<endl <<endl;
 
 
 
 
 
    }
+
+   cout<<"Congratulation you reached the goal"<<endl;                        //be pround of your own version 😊
 
   
     return 0;
