@@ -1,12 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 int main() {
 
    int row,  col ;
    cout<<"Enter maze row ";
    cin>>row ;
    cout<<"Enter maze col ";
+
    cin>>col ;
 
    int arr [row][col];
@@ -28,17 +30,9 @@ int main() {
     }
    }
 
-//    for(int i = 0 ; i < row ;i++)
-//    {
-//     for(int j=0 ; j<col; j++)
-//     {
-//         cout<<arr[i][j]<<" " ; 
-//     }
-//     cout<<endl;
-//    }
 
    
-     int j =1 ;
+   int j =1 ;
 
    for(int i = 0 ; i<row ; i++)
    {
@@ -48,11 +42,14 @@ int main() {
         
     }
 
+
     if((i== 0 && j == 0) ||(i==row-1  && j == col-1) )
         {
 
             continue;
         }
+
+
     int ran = rand() % col ; 
      while(ran== j -1 || ran== j+1)
      {
@@ -69,6 +66,8 @@ int main() {
 
 
    }
+
+
 
    cout<<"Here the path :" <<endl<<endl ;
 
@@ -102,15 +101,18 @@ int main() {
             continue;
 
         }
+        
         if(h+1 >=col)
         {
             cout<<"Out of bound "<<endl ;
             continue;
 
         }
+
          arr[s][h]=1 ;
         arr[s][h+1]=3 ;
-        h+=1 ;}
+        h+=1  ;
+        }
 
         else if( c=='l')
     {
@@ -127,10 +129,13 @@ int main() {
             continue;
 
         }
+
          arr[s][h]=1 ;
         arr[s][h-1]=3 ;
         h-=1 ;}
 
+
+      
         else if( c=='u')
     {
        
@@ -159,7 +164,7 @@ int main() {
             continue;
 
         }
-       else if(s+1<0)
+       else if(s+1<=row)
         {
             cout<<"Out of bound "<<endl ;
             continue;
@@ -167,18 +172,13 @@ int main() {
         }
          arr[s][h]=1 ;
         arr[s+1][h]=3 ;
-        s+=1 ;}
-
-
-
-
-
-
-
-
-
-
-
+        s+=1 ;
+        }
+        else
+        {
+            cout<<"Invalid input "<<endl;
+            continue; 
+        }
 
    for(int i = 0 ; i < row ;i++)
    {
@@ -189,9 +189,6 @@ int main() {
     cout<<endl;
    }
    cout<<endl<<endl <<endl;
-
-
-
 
 
    }
