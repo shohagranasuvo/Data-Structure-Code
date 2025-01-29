@@ -22,7 +22,7 @@ int main() {
     {
         if((i== 0 && j == 0) ||(i==row-1  && j == col-1) )
         {
-
+                                                                                                
             continue;
         }
         arr[i][j]=1 ; 

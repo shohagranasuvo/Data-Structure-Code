@@ -57,6 +57,21 @@ void levelOrderTraversal(Node * root)
 
 
 }
+void inorder (Node *node)
+{
+    if(node== NULL)
+    {
+        return ;
+
+
+    }
+    inorder(node->left ) ;
+    cout<<node->data <<" ";
+    inorder(node->right) ;
+    
+}
+
+
 
 
 
@@ -71,6 +86,15 @@ void levelOrderTraversal(Node * root)
 
 
         }
+        
+    }
+    void findSamllest()
+    {
+        
+    }
+
+    void findlarge()
+    {
         
     }
 

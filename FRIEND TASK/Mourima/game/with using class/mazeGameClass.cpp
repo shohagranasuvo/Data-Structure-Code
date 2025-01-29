@@ -8,7 +8,9 @@ private:
     int arr[100][100];
 
 public:
-    MazeGame(int r, int c) : row(r), col(c) {
+    MazeGame(int r, int c)  {
+        row= r ;
+        col = c ;
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
                 arr[i][j] = 1;
